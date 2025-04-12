@@ -342,7 +342,6 @@ static XHSHelperViewController *sharedInstance = nil;
     }
     [headerView addSubview:indicatorView];
     
-    // 添加点击手势
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headerTapped:)];
     [headerView addGestureRecognizer:tapGesture];
     headerView.tag = section; // 用于在点击时识别是哪个分组
@@ -355,7 +354,6 @@ static XHSHelperViewController *sharedInstance = nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    // 如果分组已展开，则显示底部说明
     if ([self.sectionExpanded[section] boolValue]) {
         return 40;
     }
@@ -363,7 +361,6 @@ static XHSHelperViewController *sharedInstance = nil;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    // 如果分组未展开，返回空视图
     if (![self.sectionExpanded[section] boolValue]) {
         return [[UIView alloc] initWithFrame:CGRectZero];
     }
@@ -381,14 +378,14 @@ static XHSHelperViewController *sharedInstance = nil;
     } else if (section == 1) {
         footerLabel.text = @"自动回复私信和评论，节省时间";
     } else {
-        footerLabel.text = @"© 2023-2024 H7ang0";
+        footerLabel.text = @"© 2023-2025 H7ang0";
     }
     
     [footerView addSubview:footerLabel];
     return footerView;
 }
 
-// 处理分组点击事件
+
 - (void)headerTapped:(UITapGestureRecognizer *)gesture {
     NSInteger section = gesture.view.tag;
     
