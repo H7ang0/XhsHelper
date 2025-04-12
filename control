@@ -1,0 +1,9 @@
+Package: com.h7ang0.xhshelper
+Name: XHSHelper
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: 小红书实况照片去水印插件
+Maintainer: h7ang0
+Author: h7ang0
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000) 
